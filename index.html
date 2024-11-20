@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- fonts>> (Eczar, Dancing Script, Josefin Sans ) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Eczar:wght@400..800&family=Josefin+Sans:ital,wght@0,100;1,100&display=swap"
+      rel="stylesheet"
+    />
+    <!-- fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css"
+      integrity="sha512-9xKTRVabjVeZmc+GUW8GgSmcREDunMM+Dt/GrzchfN8tkwHizc5RP4Ok/MXFFy5rIjJjzhndFScTceq5e6GvVQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- bootstrap link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <!-- favicon icon -->
+    <link rel="shortcut icon" href="images/favicon.jpg" type="image/x-icon" />
+    <title>Harue SkinCare Shop</title>
+    <style>
+      header .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        right: 0px;
+        z-index: 10;
+      }
+      header .navbar-brand {
+        font-size: 50px;
+        color: #f9f9a7;
+        text-shadow: 0px 0px 8px rgba(52, 52, 52, 0.9);
+        font-family: "Dancing Script", cursive;
+      }
+      header .bg-navbar {
+        background: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+
+        backdrop-filter: blur(10px);
+      }
+      header a {
+        color: #f9f9a7 !important;
+      }
+      header .nav-link {
+        border: none;
+        height: 39px;
+        background-color: #798b76;
+        padding: 8px 30px;
+        margin: 20px;
+        border-radius: 6px;
+        transition: 0.2s;
+        text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      header .active,
+      .nav-link:hover {
+        font-weight: bold;
+        box-shadow: 0 0 0 4px #dfe3c8, 0 0 0 8px #798b76;
+      }
+
+      .btn:hover {
+        font-weight: bold;
+        box-shadow: 0 0 0 4px #dfe3c8, 0 0 0 8px #798b76;
+        transition: 0.2s;
+      }
+
+      body {
+        height: 340vh;
+        background-image: url(images/background.jpg);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        backdrop-filter: blur(10px);
+      }
+      header,
+      img {
+        position: absolute;
+        width: 560px;
+        height: auto;
+        left: 46%;
+      }
+      header .harue {
+        font-family: "Dancing Script", cursive;
+        border: #0f0f0e;
+      }
+      h1 {
+        font-family: "Eczar", serif;
+        font-size: 60px;
+        color: #f9f9a7;
+        text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.9);
+        position: absolute;
+        right: 135%;
+        bottom: -270px;
+        transform: translateX(50%);
+        white-space: nowrap;
+        text-transform: capitalize;
+        letter-spacing: 2px;
+        z-index: 2;
+      }
+      header p {
+        font-family: "Eczar", serif;
+        font-size: 28px;
+        color: #1d1d1c;
+        text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.9);
+        position: absolute;
+        right: 650px;
+        bottom: -440px;
+        transform: translateX(50%);
+        white-space: nowrap;
+        text-transform: none;
+        letter-spacing: 2px;
+        z-index: 3;
+      }
+      /* glassy box */
+      .glass {
+        position: absolute;
+        right: 100px;
+        bottom: -550px;
+        width: 1000px;
+        height: 400px;
+        background: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+        border-radius: 50px;
+        backdrop-filter: blur(10px);
+      }
+      .second-bg {
+        background-color: #798b76;
+        z-index: 6;
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        position: relative;
+        top: 700px;
+      }
+
+      .oval {
+        position: relative;
+        bottom: 40px;
+        height: 10vh;
+        z-index: 7;
+        background-color: #798b76;
+        border-radius: 50%;
+      }
+      /* scroll */
+      html {
+        scroll-behavior: smooth;
+      }
+      #brands {
+        scroll-margin-top: -687px;
+      }
+      #shop {
+        scroll-margin-top: -700px;
+      }
+      #home {
+        scroll-margin-top: 0px;
+      }
+      #shop h5:hover,
+      #shop p:hover,
+      #brands h5:hover,
+      #brands p:hover {
+        color: red;
+        text-shadow: #0a0a0a;
+      }
+
+      #shop h5 {
+        font-family: "Eczar", serif;
+      }
+      #shop p {
+        font-family: "Josefin Sans", serif;
+        font-weight: 1000;
+        font-size: 17px;
+      }
+      footer a {
+        color: #49281a;
+        font-size: 40px;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header id="home">
+      <!-- navbar -->
+
+      <nav class="navbar navbar-expand-lg bg-navbar">
+        <div class="container-fluid">
+          <!-- brand name -->
+          <a class="navbar-brand" href="#">HARUE</a>
+          <!-- Toggler icon (///) button -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <!-- nav item -->
+            <ul
+              class="navbar-nav mx-auto mb-2 mb-lg-0"
+              style="font-family: Eczar, serif"
+            >
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#brands">Brands</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about-us">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+              </li>
+            </ul>
+            <!-- toggler (///) >> form -->
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+      <!-- home-section -->
+
+      <h1>Let's care with <span class="harue">HARUE</span></h1>
+
+      <p>
+        Discover the perfect skincare routine from our curated <br />collection
+        of top brands. Begin your journey to healthier,<br />
+        radiant skin with products tailored just for you.
+      </p>
+      <div class="glass"></div>
+
+      <a
+        type="button"
+        class="btn btn-success p-2"
+        href="#shop"
+        style="
+          z-index: 18;
+          position: relative;
+          bottom: -500px;
+          left: -300px;
+          color: #f9f9a7;
+          background-color: #798b76;
+          font-family: Eczar, serif;
+        "
+      >
+        Shop Now
+      </a>
+      <a
+        type="button"
+        class="btn btn-success p-2 mx-3"
+        href="review.html"
+        style="
+          z-index: 18;
+          position: relative;
+          bottom: -500px;
+          left: -300px;
+          color: #f9f9a7;
+          background-color: #798b76;
+          font-family: Eczar, serif;
+        "
+      >
+        Watch Review
+      </a>
+      <img src="images/home-removebg.png" alt="" />
+    </header>
+
+    <!-- Brand Section with Cards -->
+    <section id="brands">
+      <div class="second-bg">
+        <div class="oval"></div>
+        <div class="container py-5">
+          <h2
+            style="
+              color: #f9f9a7;
+              position: relative;
+              top: -130px;
+              text-align: center;
+              z-index: 11;
+              font-family: Dancing Script, cursive;
+            "
+          >
+            Our Featured Brands
+          </h2>
+
+          <div class="row">
+            <!-- Card 1 (Anua)-->
+            <div class="col-md-4 mb-4">
+              <div class="card h-130" style="margin-top: -90px">
+                <img
+                  src="images/Anua.jpg"
+                  class="card-img-top"
+                  alt="Brand 1"
+                  style="
+                    position: relative;
+                    left: 0%;
+                    border-radius: 50%;
+                    padding: 18px;
+                  "
+                />
+                <div class="card-body">
+                  <h5 class="card-title" style="font-family: Eczar, serif">
+                    Anua
+                  </h5>
+                  <p
+                    class="card-text"
+                    style="
+                      font-family: Josefin Sans, serif;
+                      font-weight: 1000;
+                      font-size: 17px;
+                    "
+                  >
+                    Anua skincare uses Korean herbal traditions to create
+                    gentle, natural products that calm and balance the skin.
+                  </p>
+                  <a
+                    href="#skin1004"
+                    class="btn btn-success"
+                    style="
+                      background-color: #798b76;
+                      color: #f9f9a7;
+                      font-family: Eczar, serif;
+                    "
+                    >Explore</a
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- card 2 (skin1004) -->
+            <div class="col-md-4 mb-4">
+              <div class="card h-130" style="margin-top: -90px">
+                <img
+                  src="images/skin1004.jpg"
+                  class="card-img-top"
+                  alt="Brand 2"
+                  style="
+                    position: relative;
+                    left: 0%;
+                    border-radius: 50%;
+                    padding: 18px;
+                  "
+                />
+                <div class="card-body">
+                  <h5 class="card-title" style="font-family: Eczar, serif">
+                    Skin1004
+                  </h5>
+                  <p
+                    class="card-text"
+                    style="
+                      font-family: Josefin Sans, serif;
+                      font-weight: 1000;
+                      font-size: 17px;
+                    "
+                  >
+                    Discover soothing skincare products from Skin1004 , designed
+                    for sensitive skin with natural ingredients. &nbsp;
+                    &nbsp;<span style="color: white">........</span>
+                  </p>
+                  <a
+                    href="#skin1004"
+                    class="btn btn-success"
+                    style="
+                      background-color: #798b76;
+                      color: #f9f9a7;
+                      font-family: Eczar, serif;
+                    "
+                    >Explore</a
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- card 3 (beauty-of-joseon) -->
+            <div class="col-md-4 mb-4">
+              <div class="card h-130" style="margin-top: -90px">
+                <img
+                  src="images/beauty-of-joseon.jpg"
+                  class="card-img-top"
+                  alt="Brand 3"
+                  style="
+                    position: relative;
+                    left: 0%;
+                    border-radius: 50%;
+                    padding: 18px;
+                  "
+                />
+                <div class="card-body">
+                  <h5 class="card-title" style="font-family: Eczar, serif">
+                    Beauty Of Joseon
+                  </h5>
+                  <p
+                    class="card-text"
+                    style="
+                      font-family: Josefin Sans, serif;
+                      font-weight: 1000;
+                      font-size: 17px;
+                    "
+                  >
+                    Reveal radiant skin with Beauty of Joseon, blending
+                    traditional Korean ingredients for a nourishing, glowing
+                    complexion.
+                  </p>
+                  <a
+                    href="#skin1004"
+                    class="btn btn-success"
+                    style="
+                      background-color: #798b76;
+                      color: #f9f9a7;
+                      font-family: Eczar, serif;
+                    "
+                    >Explore</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- shop section -->
+    <section id="shop" style="margin-top: 1%">
+      <!-- navbar -->
+      <nav
+        class="navbar navbar-expand-lg bg-navbar"
+        style="z-index: 25; position: relative; bottom: -700px"
+      >
+        <div class="container-fluid">
+          <!-- Toggler icon (///) button -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <!-- nav item -->
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="#moistur"
+                  style="
+                    color: #1c1d1c;
+                    background: rgba(255, 255, 255, 0.1);
+                    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+                    border-radius: 50px;
+                    backdrop-filter: blur(10px);
+                    width: 120px;
+                    text-align: center;
+                    margin-left: 20px;
+                    font-family: Eczar, serif;
+                    font-size: 20px;
+                  "
+                  >Moisturizer</a
+                >
+                <!-- toner -->
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="shop.html#toner"
+                  style="
+                    color: #161616;
+                    background: rgba(255, 255, 255, 0.1);
+                    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+                    border-radius: 50px;
+                    backdrop-filter: blur(10px);
+                    width: 120px;
+                    text-align: center;
+                    margin-left: 20px;
+                    font-family: Eczar, serif;
+                    font-size: 20px;
+                  "
+                  >Toner</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="shop.html#serum"
+                  style="
+                    color: #161616;
+                    background: rgba(255, 255, 255, 0.1);
+                    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+                    border-radius: 50px;
+                    backdrop-filter: blur(10px);
+                    width: 120px;
+                    text-align: center;
+                    margin-left: 20px;
+                    font-family: Eczar, serif;
+                    font-size: 20px;
+                  "
+                  >Serum</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="shop.html#cleanser"
+                  style="
+                    color: #0a0a0a;
+                    background: rgba(255, 255, 255, 0.1);
+                    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+                    border-radius: 50px;
+                    backdrop-filter: blur(10px);
+                    width: 120px;
+                    text-align: center;
+                    margin-left: 20px;
+                    font-family: Eczar, serif;
+                    font-size: 20px;
+                  "
+                  >Cleanser</a
+                >
+              </li>
+
+              <!-- sunscream -->
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="shop.html#suncream"
+                  style="
+                    color: #0a0a0a;
+                    background: rgba(255, 255, 255, 0.1);
+                    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+                    border-radius: 50px;
+                    backdrop-filter: blur(10px);
+                    width: 120px;
+                    text-align: center;
+                    margin-left: 20px;
+                    font-family: Eczar, serif;
+                    font-size: 20px;
+                  "
+                  >sunscream</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- shop cards -->
+      <!-- shop cards - moistur -->
+      <div
+        class="row row-cols-1 row-cols-md-4 g-4 moistur"
+        style="
+          z-index: 20;
+          position: relative;
+          bottom: -780px;
+          left: 200px;
+          width: 1200px;
+        "
+      >
+        <!-- skin1004-moistur(1) Card-1 -->
+        <div class="col">
+          <div
+            class="card h-100"
+            style="
+              background: rgba(255, 255, 255, 0.1);
+              box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+              border-radius: 10px;
+              backdrop-filter: blur(10px);
+              margin: 20px;
+              padding-top: 200px;
+            "
+          >
+            <img
+              src="images/skin1004-moisture-removebg-preview (2).png"
+              class="card-img-top"
+              alt="..."
+              style="
+                position: absolute;
+                left: 0%;
+                bottom: 230px;
+                left: -34px;
+                width: 290px;
+                padding: 18px;
+              "
+            />
+            <div class="card-body">
+              <h5 class="card-title">Skin1004 - moisturizer (50ml)</h5>
+              <p class="card-text">
+                Hydrates, soothes, and brightens. Suitable for sensitive and dry
+                skin. <br />
+                $14.70
+              </p>
+              <button
+                type="button"
+                class="btn"
+                style="
+                  background-color: #798b76;
+                  color: #f9f9a7;
+                  font-family: Eczar, serif;
+                "
+              >
+                Order
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Anua-moisture Card-2 -->
+        <div class="col">
+          <div
+            class="card h-100"
+            style="
+              background: rgba(255, 255, 255, 0.1);
+              box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+              border-radius: 10px;
+              backdrop-filter: blur(10px);
+              margin: 20px;
+              padding-top: 200px;
+            "
+          >
+            <img
+              src="images/BOJ-moistur-removebg-preview.png"
+              class="card-img-top"
+              alt="..."
+              style="
+                position: absolute;
+
+                bottom: 200px;
+                left: -40px;
+                width: 320px;
+              "
+            />
+            <div class="card-body">
+              <h5 class="card-title">Beauty Of Joseon - moisturizer (50ml)</h5>
+              <p class="card-text">
+                Hydrates deeply & brightens skin. For sensitive and dry skin.
+                <br />$21.00
+              </p>
+              <button
+                type="button"
+                class="btn"
+                style="
+                  background-color: #798b76;
+                  color: #f9f9a7;
+                  font-family: Eczar, serif;
+                "
+              >
+                Order
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- beauty of joseon-moistur Card-3 -->
+        <div class="col">
+          <div
+            class="card h-100"
+            style="
+              background: rgba(255, 255, 255, 0.1);
+              box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+              border-radius: 10px;
+              backdrop-filter: blur(10px);
+              margin: 20px;
+              padding-top: 200px;
+            "
+          >
+            <img
+              src="images/Anua-moistur-removebg-preview.png"
+              class="card-img-top"
+              alt="..."
+              style="
+                position: absolute;
+                left: 0%;
+                bottom: 170px;
+                left: -84px;
+                width: 400px;
+                padding: 18px;
+              "
+            />
+            <div class="card-body">
+              <h5 class="card-title">Anua - moisturizer (50ml)</h5>
+              <p class="card-text">
+                Hydrates, soothes,<br />
+                and refreshes all skin types.
+                <span style="color: #e7e9d7">....</span> <br />
+                $25.00
+              </p>
+              <button
+                type="button"
+                class="btn"
+                style="
+                  background-color: #798b76;
+                  color: #f9f9a7;
+                  font-family: Eczar, serif;
+                "
+              >
+                Order
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- skin1004-moisture(2) card-4-->
+        <div class="col">
+          <div
+            class="card h-100"
+            style="
+              background: rgba(255, 255, 255, 0.1);
+              box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+              border-radius: 10px;
+              backdrop-filter: blur(10px);
+              margin: 20px;
+              padding-top: 200px;
+            "
+          >
+            <img
+              src="images/anuapeach-moisture-removebg-preview.png"
+              class="card-img-top"
+              alt="..."
+              style="
+                position: absolute;
+                left: 0%;
+                bottom: 240px;
+                left: -38px;
+                width: 320px;
+                padding: 18px;
+              "
+            />
+            <div class="card-body">
+              <h5 class="card-title">Anua peach - moisturizer (50ml)</h5>
+              <p class="card-text">
+                Provides lightweight hydration, softens, and suits all skin
+                types.
+                <br />
+                $28.00
+              </p>
+              <button
+                type="button"
+                class="btn"
+                style="background-color: #798b76; color: #f9f9a7"
+              >
+                Order
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- shop cards - toner -->
+    </section>
+
+    <section
+      id="about-us"
+      style="position: absolute; top: 2100px; margin: 50px"
+    >
+      <div
+        style="
+          background-color: #798b76;
+          width: 100px;
+          position: absolute;
+          width: 1497px;
+          height: 350px;
+          z-index: -1;
+          margin-left: -40px;
+          border-radius: 1%;
+        "
+      ></div>
+      <h2
+        style="
+          margin: 20px auto;
+          font-family: Dancing Script, cursive;
+          color: #f9f9a7;
+        "
+      >
+        About Us
+      </h2>
+      <p style="font-family: Eczar, serif; color: #f9f9a7">
+        Welcome to
+        <span style="font-family: Dancing Script, cursive; font-weight: 900"
+          >HARUE</span
+        >, your trusted destination for premium skincare. At Harue, we believe
+        in the power of simplicity and nature to bring out the best in your
+        skin.
+      </p>
+      <p style="font-family: Eczar, serif; color: #f9f9a7">
+        Our carefully curated collection features top brands like
+        <span style="color: #dfe3c8">Skin1004</span> ,
+        <span style="color: #dfe3c8">Beauty of Joseon </span>, and
+        <span style="color: #dfe3c8">Anua</span> , known for their dedication to
+        quality and innovation.
+      </p>
+      <p style="font-family: Eczar, serif; color: #f9f9a7">
+        We are passionate about helping you achieve healthy, radiant skin by
+        offering products that are gentle, effective, and inspired by timeless
+        beauty traditions. Whether you're starting your skincare journey or
+        refining your routine, Harue is here to guide you every step of the way.
+      </p>
+      <p>
+        <span style="font-family: Eczar, serif; color: #dfe3c8"
+          >Discover skincare that cares at Harue. Your beauty, our mission.
+        </span>
+      </p>
+    </section>
+    <footer style="position: absolute; top: 2400px; margin: 50px; left: 500px">
+      <p style="font-family: Eczar, serif">
+        Copyright &copy; 2024,
+        <span style="font-family: Dancing Script, cursive; font-weight: 900"
+          >HARUE</span
+        >
+        SkinCare Shop. All Rights Reserved.
+      </p>
+      <!-- to top icon -->
+      <a href="#home" style="color: black">
+        <i class="fa-solid fa-circle-up"></i
+      ></a>
+    </footer>
+    <!--fontawesome icon -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/js/all.min.js"
+      integrity="sha512-8py0AXTY8pfAroJmBkYfJ+VuKUKMMsUOC1MldW9kkC/k4SZi6AexSDS60QYn41U2rp8KL9IpVHy8FxW2TDmjDA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
