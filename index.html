@@ -187,6 +187,92 @@
         bottom: 20px;
         right: 20px;
       }
+
+      @media (max-width: 768px) {
+        body {
+          height: 682vh;
+          
+        }
+        header img {
+          position: absolute;
+          left: -160px;
+          width: 430px;
+          top: 0px;
+        }
+        header .header-content {
+          display: none;
+        }
+        .header-btn {
+          position: absolute;
+          top: 480px;
+          margin-left: 200px;
+        }
+        #brands {
+          position: relative;
+          top: -100px;
+        }
+        #brands .card {
+          width: 300px;
+          margin: 90px;
+        }
+        .second-bg {
+          height: 1670px;
+        }
+        #shop {
+          position: relative;
+          top: -90px;
+        }
+        #shop .card {
+          position: relative;
+          top: -40px;
+          left: -100px;
+          width: 243px;
+        }
+        #shop nav{
+          z-index: inherit;
+        }
+        #about-us .container {
+          position: absolute;
+          top: 2240px;
+          text-align: center;
+        }
+#about-us p{
+  position: relative;
+  
+  font-size: 15px;
+  width: 370px;
+
+}
+#about-us h2{
+  position: relative;
+  
+  
+  width: 370px;
+
+}
+.div{
+ display: none;
+  
+}
+#about-us .container{
+  background-color: #798b76;
+  width: 400px;
+  height: 540px;
+  margin: -9px;
+  
+}
+    footer{
+      display: ;
+    }   
+    footer p{
+position: absolute;
+left: -440px;
+bottom: -2470px;
+font-size: 14px;
+width: 260px;
+text-align: center;
+    }
+      }
     </style>
   </head>
   <body>
@@ -248,19 +334,20 @@
       </nav>
 
       <!-- home-section -->
+      <div class="header-content">
+        <h1>Let's care with <span class="harue">HARUE</span></h1>
 
-      <h1>Let's care with <span class="harue">HARUE</span></h1>
-
-      <p>
-        Discover the perfect skincare routine from our curated <br />collection
-        of top brands. Begin your journey to healthier,<br />
-        radiant skin with products tailored just for you.
-      </p>
+        <p>
+          Discover the perfect skincare routine from our curated
+          <br />collection of top brands. Begin your journey to healthier,<br />
+          radiant skin with products tailored just for you.
+        </p>
+      </div>
       <div class="glass"></div>
 
       <a
         type="button"
-        class="btn btn-success p-2"
+        class="btn btn-success p-2 header-btn"
         href="#shop"
         style="
           z-index: 18;
@@ -276,7 +363,7 @@
       </a>
       <a
         type="button"
-        class="btn btn-success p-2 mx-3"
+        class="btn btn-success p-2 mx-3 header-btn"
         href="review.html"
         style="
           z-index: 18;
@@ -769,61 +856,64 @@
           </div>
         </div>
       </div>
-
-      <!-- shop cards - toner -->
     </section>
 
     <section
       id="about-us"
       style="position: absolute; top: 2100px; margin: 50px"
     >
-      <div
-        style="
-          background-color: #798b76;
-          width: 100px;
-          position: absolute;
-          width: 1497px;
-          height: 350px;
-          z-index: -1;
-          margin-left: -40px;
-          border-radius: 1%;
-        "
-      ></div>
-      <h2
-        style="
-          margin: 20px auto;
-          font-family: Dancing Script, cursive;
-          color: #f9f9a7;
-        "
-      >
-        About Us
-      </h2>
-      <p style="font-family: Eczar, serif; color: #f9f9a7">
-        Welcome to
-        <span style="font-family: Dancing Script, cursive; font-weight: 900"
-          >HARUE</span
-        >, your trusted destination for premium skincare. At Harue, we believe
-        in the power of simplicity and nature to bring out the best in your
-        skin.
-      </p>
-      <p style="font-family: Eczar, serif; color: #f9f9a7">
-        Our carefully curated collection features top brands like
-        <span style="color: #dfe3c8">Skin1004</span> ,
-        <span style="color: #dfe3c8">Beauty of Joseon </span>, and
-        <span style="color: #dfe3c8">Anua</span> , known for their dedication to
-        quality and innovation.
-      </p>
-      <p style="font-family: Eczar, serif; color: #f9f9a7">
-        We are passionate about helping you achieve healthy, radiant skin by
-        offering products that are gentle, effective, and inspired by timeless
-        beauty traditions. Whether you're starting your skincare journey or
-        refining your routine, Harue is here to guide you every step of the way.
-      </p>
-      <p>
-        <span style="font-family: Eczar, serif; color: #dfe3c8"
-          >Discover skincare that cares at Harue. Your beauty, our mission.
-        </span>
-      </p>
+      <div class="container">
+        <div
+          style="
+            background-color: #798b76;
+            width: 100px;
+            position: absolute;
+            width: 1497px;
+            height: 350px;
+            top: -2px;
+            z-index: -1;
+            margin-left: -52px;
+            border-radius: 1%;
+          "
+            class="div"     ></div>
+        <h2
+          style="
+            margin: 30px auto;
+            font-family: Dancing Script, cursive;
+            color: #f9f9a7;
+          "
+        >
+          About Us
+        </h2>
+        
+        <p style="font-family: Eczar, serif; color: #f9f9a7">
+          Welcome to
+          <span style="font-family: Dancing Script, cursive; font-weight: 900"
+            >HARUE</span
+          >, your trusted destination for premium skincare. At Harue, we believe
+          in the power of simplicity and nature to bring out the best in your
+          skin.
+        </p>
+        <p style="font-family: Eczar, serif; color: #f9f9a7">
+          Our carefully curated collection features top brands like
+          <span style="color: #dfe3c8">Skin1004</span> ,
+          <span style="color: #dfe3c8">Beauty of Joseon </span>, and
+          <span style="color: #dfe3c8">Anua</span> , known for their dedication
+          to quality and innovation.
+        </p>
+        <p style="font-family: Eczar, serif; color: #f9f9a7">
+          We are passionate about helping you achieve healthy, radiant skin by
+          offering products that are gentle, effective, and inspired by timeless
+          beauty traditions. Whether you're starting your skincare journey or
+          refining your routine, Harue is here to guide you every step of the
+          way.
+        </p>
+        <p>
+          <span style="font-family: Eczar, serif; color: #dfe3c8"
+            >Discover skincare that cares at Harue. Your beauty, our mission.
+          </span>
+        </p>
+      </div>
     </section>
     <footer style="position: absolute; top: 2400px; margin: 50px; left: 500px">
       <p style="font-family: Eczar, serif">
