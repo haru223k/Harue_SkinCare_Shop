@@ -187,11 +187,16 @@
         bottom: 20px;
         right: 20px;
       }
+      .header-btn {
+        display: none;
+      }
 
-      @media (max-width: 768px) {
+      @media (max-width: 425px) {
         body {
-          height: 682vh;
-          
+          height: 800vh;
+        }
+        header {
+          width: 3vw;
         }
         header img {
           position: absolute;
@@ -202,76 +207,91 @@
         header .header-content {
           display: none;
         }
+
         .header-btn {
+          display: inline;
+          width: 2000px;
           position: absolute;
-          top: 480px;
-          margin-left: 200px;
+          left: -980px;
+          z-index: 50;
+          bottom: -370px;
+          text-align: center;
+        }
+        .glass {
+          display: none;
         }
         #brands {
           position: relative;
-          top: -100px;
+          top: -126px;
+        }
+        #brands .oval {
+          display: none;
         }
         #brands .card {
+          position: relative;
+          bottom: 0px;
+          left: -90px;
           width: 300px;
           margin: 90px;
         }
+        #brands h2 {
+          margin-top: 100px;
+        }
         .second-bg {
-          height: 1670px;
+          height: 1770px;
         }
         #shop {
           position: relative;
-          top: -90px;
+          top: -130px;
         }
         #shop .card {
           position: relative;
           top: -40px;
-          left: -100px;
+          left: -180px;
           width: 243px;
         }
-        #shop nav{
-          z-index: inherit;
-        }
+
         #about-us .container {
           position: absolute;
-          top: 2240px;
+          left: -100px;
+          top: 2573px;
+
           text-align: center;
         }
-#about-us p{
-  position: relative;
-  
-  font-size: 15px;
-  width: 370px;
+        #about-us p {
+          position: relative;
+          left: 54px;
+          font-size: 15px;
+          width: 300px;
+        }
+        #about-us h2 {
+          position: relative;
+          left: 20px;
 
-}
-#about-us h2{
-  position: relative;
-  
-  
-  width: 370px;
+          width: 370px;
+        }
+        .div {
+          display: none;
+        }
+        #about-us .container {
+          background-color: #798b76;
+          width: 400px;
+          height: 540px;
+          margin: -9px;
+        }
 
-}
-.div{
- display: none;
-  
-}
-#about-us .container{
-  background-color: #798b76;
-  width: 400px;
-  height: 540px;
-  margin: -9px;
-  
-}
-    footer{
-      display: ;
-    }   
-    footer p{
-position: absolute;
-left: -440px;
-bottom: -2470px;
-font-size: 14px;
-width: 260px;
-text-align: center;
-    }
+        footer p {
+          position: absolute;
+          left: -520px;
+          bottom: -2820px;
+          font-size: 10px;
+          width: 260px;
+          text-align: center;
+        }
+        footer a {
+          font-size: 24px;
+          bottom: -30px;
+        }
       }
     </style>
   </head>
@@ -347,7 +367,7 @@ text-align: center;
 
       <a
         type="button"
-        class="btn btn-success p-2 header-btn"
+        class="btn btn-success p-2"
         href="#shop"
         style="
           z-index: 18;
@@ -363,7 +383,7 @@ text-align: center;
       </a>
       <a
         type="button"
-        class="btn btn-success p-2 mx-3 header-btn"
+        class="btn btn-success p-2 mx-3"
         href="review.html"
         style="
           z-index: 18;
@@ -377,6 +397,36 @@ text-align: center;
       >
         Watch Review
       </a>
+      <div class="header-btn">
+        <a
+          type="button"
+          class="btn btn-success p-2 header-btnshop"
+          href="#shop"
+          style="
+            z-index: 18;
+
+            color: #f9f9a7;
+            background-color: #798b76;
+            font-family: Eczar, serif;
+          "
+        >
+          Shop Now
+        </a>
+        <a
+          type="button"
+          class="btn btn-success p-2 mx-3 header-btnreview"
+          href="review.html"
+          style="
+            z-index: 18;
+
+            color: #f9f9a7;
+            background-color: #798b76;
+            font-family: Eczar, serif;
+          "
+        >
+          Watch Review
+        </a>
+      </div>
       <img src="images/home-removebg.png" alt="" />
     </header>
 
@@ -875,7 +925,8 @@ text-align: center;
             margin-left: -52px;
             border-radius: 1%;
           "
-            class="div"     ></div>
+          class="div"
+        ></div>
         <h2
           style="
             margin: 30px auto;
@@ -885,7 +936,7 @@ text-align: center;
         >
           About Us
         </h2>
-        
+
         <p style="font-family: Eczar, serif; color: #f9f9a7">
           Welcome to
           <span style="font-family: Dancing Script, cursive; font-weight: 900"
